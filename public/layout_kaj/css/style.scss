@@ -1,0 +1,272 @@
+@font-face {
+  src: url("../fonts/IRANSansWeb(FaNum).ttf");
+  font-weight: normal;
+  font-family: IRANSans;
+}
+
+$primary-color: #da3d64;
+$secondary-color: #da4769;
+$bg-light: #f5f5f5;
+$title: #333;
+$sub: #888;
+
+* {
+  font-family: IRANSans;
+}
+
+body {
+  font-size: 14px;
+}
+
+a {
+  color: $title;
+
+  &:hover {
+    text-decoration: none !important;
+    color: black !important;
+  }
+}
+
+ul {
+  li {
+    list-style: none;
+  }
+}
+
+.rtl {
+  direction: rtl;
+
+}
+
+//Buttons
+@mixin button {
+  border-radius: 7px;
+  border: 1px solid transparent;
+  padding: 7px 21px;
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+
+}
+
+.primary-button {
+  @include button;
+  background-color: $primary-color;
+  color: white;
+
+  a {
+    color: white;
+
+    &:hover {
+      color: white !important;
+    }
+  }
+}
+
+//title
+.title {
+  h3 {
+    font-size: 14px;
+  }
+}
+
+//toman
+.toman {
+  font-size: 10px;
+  color: $sub;
+  font-weight: normal;
+}
+
+//price
+.price {
+  .old-price {
+    text-decoration: line-through;
+    color: $sub;
+    font-size: 12px;
+  }
+
+  .new-price {
+    color: $title;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+//LOGO
+.logo {
+  color: $primary-color;
+  font-weight: bold;
+}
+
+header {
+  .search {
+    form {
+      background-color: $bg-light;
+      border-radius: 10px;
+      padding: 5px 20px;
+      border: 1px solid #eee;
+
+      button {
+        @include button;
+        background-color: $primary-color;
+        color: white;
+        border-radius: 10px;
+      }
+
+      input {
+        border: none;
+        background-color: transparent;
+        text-align: right;
+        direction: rtl;
+        padding: 10px;
+        outline: none;
+      }
+    }
+  }
+
+  nav {
+    background-color: $bg-light;
+
+    ul {
+      li {
+        padding: 10px 30px;
+        margin: 0 10px;
+        position: relative;
+        overflow: hidden;
+        //border-radius: 5px;
+        &:after {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          height: 3px;
+          width: 100%;
+          transform: translateX(100%);
+          transition: 0.2s;
+          content: '';
+          background-color: $primary-color;
+          transform-origin: bottom right;
+        }
+
+        &:hover:after {
+          transform: translateX(0);
+          transform-origin: bottom left;
+        }
+      }
+    }
+  }
+}
+
+//Carousel
+.carouselTop {
+  .swiper-button-next, .swiper-button-prev {
+    color: #333;
+
+    &:after {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+}
+
+//banner
+.banners {
+  height: 700px;
+  overflow: hidden;
+
+  .squareBanner {
+    div {
+      height: 50%;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+//slider-sug
+.slider-sug {
+  background-color: $bg-light;
+  border-radius: 10px;
+
+  .slider-title {
+    img {
+      border-radius: 7px;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .sug-slider-item {
+    border-radius: 10px;
+    overflow: hidden;
+
+    &:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+
+
+  .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+    left: 0
+  }
+
+  .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+    right: 0;
+  }
+
+  .swiper-sug-next, .swiper-sug-prev {
+    color: #960308;
+    background-color: rgba(0, 0, 0, 0.1);
+    outline: transparent !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    border-radius: 5px;
+    padding: 7px 20px;
+
+    &:after {
+      font-size: 18px;
+    }
+  }
+}
+
+//product-items
+.product-items{
+  margin: 5px;
+  width: calc(20% - 10px);
+}
+
+//footer
+footer{
+  background-color: $bg-light;
+  ul{
+    margin: 0 10px;
+    h4{
+      color:$title;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    li{
+      color: $sub;
+      font-size: 14px !important;
+      margin: 10px 0 ;
+      a{
+        color:$sub !important;
+        font-size: 14px !important;
+        &:hover{
+          color: $title !important;
+        }
+      }
+    }
+    iframe{
+      border-radius: 10px;
+    }
+  }
+}
+
+
+
+
